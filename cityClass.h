@@ -26,7 +26,7 @@ class cityClass {
 };
 
 //Constructor
-cityClass::cityClass(){
+cityClass::cityClass(string country1, string language1, double population1, double costRanking1, double adventureRanking1, double culturalRanking1, double educationalRanking1, double scenicRanking1):country(country1),language(language1), population(popluation1), costRanking(costRanking1), adventureRanking(adventureRanking1), culturalRanking(culturalRanking1), educationRanking(educationalRanking1), scenicRanking(scenicRanking1){
 	
 }
 
