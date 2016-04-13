@@ -54,7 +54,7 @@ int main(){
 				cin >> country;
 			}
 			if (country==0){
-				//search for bucket list item
+				//search for bucket list item (text goes into vector of activities, then see where there is a match)
 			}
 			else{	
 				cout << "What country will you like to explore?"
@@ -67,7 +67,8 @@ int main(){
 		case 3:
 			break;
 		case 4:
-			//Ask for educational, historical, cost, and adventure preferences
+			//Chi squared (to match the actual versus wanted)
+			//Ask for food, education, cost, scenic, and adventure preferences
 			//Ask if they want a smaller city
 			//Ask if they have a language preference
 			break;
