@@ -3,16 +3,20 @@
 
 #include <iostream>
 #include <string>
-#include <sstream>
+#include <vector>
+#include <cmath>
 using namespace std;
 
 class cityClass {
 	public:
-        	virtual string matchWishList(); //return a city that matches a given wish list mention
-        	virtual string findLodging(); //see if an airbnb or a hostel is a better option
-		virtual void displayInfo(); //display general information
-		cityClass(); //constructor
+		cityClass(string, string, double, double, double, double, double, double); //constructor
+		double matchRanks(vector<double>); //use a chi-square like test to determine how similar the rankings gathered from the wish list are to the city
+        	string findLodging(); //see if an airbnb or a hostel is a better option
+		void displayInfo(); //display general information
+		string getCity();
+		string getCountry();
 	private:
+		string cityname;
 		string country;
 		string language;
 		double population; //get how large the city is
@@ -25,9 +29,23 @@ class cityClass {
 };
 
 //Constructor
-cityClass::cityClass(string country1, string language1, double population1, double costRanking1, double adventureRanking1, double culturalRanking1, double educationalRanking1, double scenicRanking1):country(country1),language(language1), population(popluation1), costRanking(costRanking1), adventureRanking(adventureRanking1), culturalRanking(culturalRanking1), educationRanking(educationalRanking1), scenicRanking(scenicRanking1){
-	
+cityClass::cityClass(string city, string c, string l, double p, double costR, double aR, double culR, double eR, double sR) : cityname(city), country(c), language(l), population(p), costRanking(costR), adventureRanking(aR), culturalRanking(culR), educationalRanking(eR), scenicRanking(sR){}
+
+double cityClass::matchRanks(vector<double> userRanks){
+  double cityRanks[] = {costRanking, adventureRanking, culturalRanking, educationalRanking, scenicRanking};
+  double chiSum = 0;
+
+  for (int i=0;i<5;i++)
+	chiSum += pow((cityRanks[i]-userRanks[i]), 2);
+
+  return chiSum;
 }
 
+string cityClass::getCity(){
+  return cityname;
+}
 
+string cityClass::getCountry(){
+  return country;
+}
 #endif //SKTRAVEL_CITYCLASS_H

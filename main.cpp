@@ -1,7 +1,6 @@
 #include <iostream>
 #include <string>
-#include <sstream>
-#include <string>
+#include <fstream>
 #include <vector>
 using namespace std;
 
@@ -67,6 +66,22 @@ int main(){
 			}
 			break;
 		case 2:
+			cout << "What country are you interested in exploring?" << endl;
+			cin >> country;
+			int count=0;
+			for (int i=0;i<23;i++){ //print cities in the ocuntry specified
+				if (count == 0 && Cities[i]->getCountry() == country){
+					cout << "We can help you explore the following cities in " << country << ": " << endl;
+					cout << Cities[i]->getCity() << endl;
+					count++;
+				}
+				else if (Cities[i]->getCountry() == country){
+					cout << Cities[i]->getCity() << endl;
+					count++;
+				}
+			}
+			if (count == 0)
+				cout << "I'm sorry, we don't have information on that country.  We can help you explore other fun places though, please try again!" << endl;
 			break;
 		case 3:
 			break;
@@ -75,6 +90,31 @@ int main(){
 			//Ask for food, education, cost, scenic, and adventure preferences
 			//Ask if they want a smaller city
 			//Ask if they have a language preference
+			string file, list;
+			vector<double> userRanks;
+			cout << "Where can we find your bucket list?" << endl;
+			cin << file;
+			ifstream bucketList(file.c_str());
+			if (bucketList.is_open()){
+				while(! bucketList.eof()){
+					getline(bucketList, list);
+					
+				}
+			}
+			else{
+				cout << "We couldn't find your bucket list, please try again." << endl;
+				break;
+			}
+			
+			double minChi=1000;
+			int cityMatchnum;
+			for (i=0;i<23;i++){
+				if (Cities[i]->matchRanks(userRanks) > minChi){ //compute chi square and find most similar city
+					cityMatch=i;
+					minChi=Cities[i]->matchRanks(userRanks);
+				}
+			}
+			Cities[cityMatch]->displayinfo();
 			break;
 		case 5:
 			//Shuffle cities and pick a random one, then display possible things to do within the cities
