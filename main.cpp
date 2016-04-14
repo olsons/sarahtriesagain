@@ -2,6 +2,8 @@
 #include <string>
 #include <fstream>
 #include <vector>
+#include <time.h>
+#include <stdlib.h>
 using namespace std;
 
 int main(){
@@ -84,6 +86,12 @@ int main(){
 				cout << "I'm sorry, we don't have information on that country.  We can help you explore other fun places though, please try again!" << endl;
 			break;
 		case 3:
+			//Enter a location (city or country or both and then computer decides if city or country)
+			cout << "Where are you currently located?" << endl;
+			cin >> country;
+			//Create an algorithm that lists all cities within the country 
+			//We could also include the longitude and latitude of all the different cities and then
+			//work within a radius of that
 			break;
 		case 4:
 			//Chi squared (to match the actual versus wanted)
@@ -118,6 +126,9 @@ int main(){
 			break;
 		case 5:
 			//Shuffle cities and pick a random one, then display possible things to do within the cities
+			srand ( time(NULL) ); //initialize the random seed
+  			int RandIndex = rand() % 23; //generates a random number between 0 and 23
+  			cout << Cities[RandIndex]; //pick a random city and display that shit
 			break;
 	}
 }
