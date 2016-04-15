@@ -1,0 +1,13 @@
+cout << "Is there a specific country you are interested in looking for the item in? (0 for no, 1 for yes)" << endl;
+while (country != 0 || country != 1){
+	cin >> country;
+}
+if (country==0){
+//search for bucket list item (text goes into vector of activities, then see where there is a match)
+}
+else{	
+cout << "What country will you like to explore?"
+cin >> countryName;
+//search for cities in the given country
+}
+break;
