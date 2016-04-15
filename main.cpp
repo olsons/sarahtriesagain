@@ -16,7 +16,7 @@ int main(){
 	cityClass Vienna("Vienna", "Austria", "German", 1741000, 8, 4, 7, 7, 7, 48.2082, 16.3738);
 	cityClass Venice("Venice", "Italy", "Italian", 260060, 6,2,6,6,9, 45.4408, 12.3155);
 	cityClass Tuscany("Tuscany", "Italy", "Italian", 3753000, 7,3,3,2,9, 43.7711, 11.2486);
-	cityClass StPetersburg("St. Petersburg", "Russia", "Russian", 249688, 3, 5, 8, 8, 8);
+	cityClass StPetersburg("StPetersburg", "Russia", "Russian", 249688, 3, 5, 8, 8, 8);
 	cityClass Stockholm("Stockholm", "Sweden", "Swedish", 789024, 4,5,7,6,7);
 	cityClass Rome("Rome", "Italy", "Italian", 2626000, 4, 5, 9, 10, 7);
 	cityClass Prague("Prague", "Czech Republic", "Czech", 1247000, 9,8,7,6,8);
@@ -80,7 +80,7 @@ int main(){
 					minChi=Cities[i]->matchRanks(userRanks);
 				}
 			}
-			Cities[cityMatch]->displayinfo();
+			Cities[cityMatch]->displayInfo();
 		case 2:
 			cout << "What country are you interested in exploring?" << endl;
 			cin >> country;
@@ -107,10 +107,11 @@ int main(){
 			cin >> radius;
 			//Use the longitude and latitude of all the different cities and to find distance and then compare with the radius
 			int count=0;
+			double minRad=1000*radius;
 			for (int i=0;i<23;i++){	
 				if (Cities[i]->findNearby(curCity, radius) < radius){ //compute chi square and find most similar city
 					cityMatch=i;
-					minChi=Cities[i]->matchRanks(userRanks);
+					minRad=Cities[i]->matchRanks(userRanks);
 				}
 			}
 			if (count == 0)
