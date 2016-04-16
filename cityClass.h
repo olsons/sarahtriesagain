@@ -20,7 +20,8 @@ class cityClass {
 		string getCountry();
 		double getLatitude();
 		double getLongitude();
-		
+		int bucketMatch(vector<string>);
+	
 	private:
 		string cityname;
 		string country;
@@ -101,4 +102,17 @@ double cityClass::getLongitude(){
 double cityClass::getLatitude(){
 	return latitude;
 }
+
+int cityClass::bucketMatch(vector<string> bucketList){
+	int match=0;
+
+	for (int i=0;i<activities.size();i++){
+		for (int j=0;j<bucketList.size();j++){
+			if (activities[i]==bucketList[j])
+				match++;
+		}
+	}
+	return match;
+}
+
 #endif //SKTRAVEL_CITYCLASS_H

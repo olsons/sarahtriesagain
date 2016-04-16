@@ -56,15 +56,15 @@ int main(){
 
 	switch(answer){
 		case 1:
-			string file, list;
-			vector<double> userRanks;
+			string file, item;
+			vector<string> list;
 			cout << "Where can we find your bucket list?" << endl;
 			cin << file;
 			ifstream bucketList(file.c_str());
 			if (bucketList.is_open()){
 				while(! bucketList.eof()){
-					getline(bucketList, list);
-					
+					getline(bucketList, item);
+					list.push_back(item);
 				}
 			}
 			else{
@@ -72,15 +72,24 @@ int main(){
 				break;
 			}
 			
-			double minChi=1000;
-			int cityMatch;
-			for (i=0;i<23;i++){
-				if (Cities[i]->matchRanks(userRanks) > minChi){ //compute chi square and find most similar city
-					cityMatch=i;
-					minChi=Cities[i]->matchRanks(userRanks);
+			vector<int> cityMatch(23,0);
+			for (int i=0;i<23;i++)
+				cityMatch[i] = Cities[i]->bucketMatch(list);
+			
+			int max=0;
+			int maxMatch;
+			for (int i=0;i<23;i++){
+				if (cityMatch[i]>max){
+					max=cityMatch[i];
+					maxMatch=i;
 				}
 			}
-			Cities[cityMatch]->displayInfo();
+
+			if (max>0)
+				Cities[maxMatch]->displayInfo();
+			else if (max==0)
+				cout << "We could not find a city to match your bucket list. Please try again!" << endl;
+			break;
 		case 2:
 			cout << "What country are you interested in exploring?" << endl;
 			cin >> country;
@@ -122,7 +131,29 @@ int main(){
 			//Ask for food, education, cost, scenic, and adventure preferences
 			//Ask if they want a smaller city
 			//Ask if they have a language preference
-			
+			vector<int> userRanks(5,0);
+
+			cout << "Please enter your preferences on a 1-10 scale!" << endl;
+			cout << "Cost: ";
+			cin << userRanks[0];
+			cout << "Adventurous: ";
+			cin << userRanks[1];
+			cout << "Cultural: ";
+			cin << userRanks[2];
+			cout << "Educational: ";
+			cin << userRanks[3];
+			cout << "Beauty: ";
+			cin << userRanks[4];
+
+			double minChi=1000;
+                        int cityMatch;
+                        for (i=0;i<23;i++){
+                                if (Cities[i]->matchRanks(userRanks) > minChi){ //compute chi square and find most similar city
+                                        cityMatch=i;
+                                        minChi=Cities[i]->matchRanks(userRanks);
+                                }
+                        }
+                        Cities[cityMatch]->displayInfo();
 			break;
 		case 5:
 			//Shuffle cities and pick a random one, then display possible things to do within the cities
