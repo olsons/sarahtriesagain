@@ -1,3 +1,9 @@
+/*Kim Kosman and Sarah Olson
+ * Travel Tool
+ * CSE20212
+ */
+
+#include "cityClass.h"
 #include <iostream>
 #include <string>
 #include <fstream>
