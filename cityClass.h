@@ -16,11 +16,11 @@ using namespace std;
 
 class cityClass {
 	public:
-		cityClass(string, string, double, double, double, double, double, double); //constructor
-		double matchRanks(vector<double>); //use a chi-square like test to determine how similar the rankings gathered from the wish list are to the city
+		cityClass(string, string, string, double, int, int, int, int, int, double, double); //constructor
+		double matchRanks(vector<int>); //use a chi-square like test to determine how similar the rankings gathered from the wish list are to the city
 	       	string findLodging(); //see if an airbnb or a hostel is a better option
 		void displayInfo(); //display general information
-		string findNearby(); //find nearby cities
+		int findNearby(cityClass, int); //find nearby cities
 		string getCity();
 		string getCountry();
 		double getLatitude();
@@ -32,11 +32,11 @@ class cityClass {
 		string country;
 		string language;
 		double population; //get how large the city is
-		double costRanking; //ranking 1-10 on the cost of the city (10 being cheap)
-		double adventureRanking; //ranking 1-10 based on the available sports
-		double culturalRanking; //ranking 1-10 based on diversity from the United States
-		double educationalRanking; //ranking 1-10 based on educational value (history and musuems)
-		double scenicRanking; //ranking 1-10 based on the overall beauty of the city and landmarks
+		int costRanking; //ranking 1-10 on the cost of the city (10 being cheap)
+		int adventureRanking; //ranking 1-10 based on the available sports
+		int culturalRanking; //ranking 1-10 based on diversity from the United States
+		int educationalRanking; //ranking 1-10 based on educational value (history and musuems)
+		int scenicRanking; //ranking 1-10 based on the overall beauty of the city and landmarks
 		double longitude; //longitude of a city to see nearby cities
 		double latitude; //latitude of a city to see nearby cities
 		vector<string> activities; //list all the activities within the city

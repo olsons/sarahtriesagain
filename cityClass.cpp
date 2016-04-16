@@ -8,16 +8,18 @@
 #include <vector>
 #include <cmath>
 #include <math.h>
+#include <fstream>
 #include <stdio.h>
 #include "cityClass.h"
 using namespace std;
 
 //Constructor
-cityClass::cityClass(string city, string c, string l, double p, double costR, double aR, double culR, double eR, double sR,double latitude, double longitude) : cityname(city), country(c), language(l), population(p), costRanking(costR), adventureRanking(aR), culturalRanking(culR), educationalRanking(eR), scenicRanking(sR), latitude(la), longitude(lo){
+cityClass::cityClass(string city, string c, string l, double p, int costR, int aR, int culR, int eR, int sR,double la, double lo) : cityname(city), country(c), language(l), population(p), costRanking(costR), adventureRanking(aR), culturalRanking(culR), educationalRanking(eR), scenicRanking(sR), latitude(la), longitude(lo){
 	string activity;
 	string file = cityname;
 	file.append(".txt");
-	ifstream = activityFile (file.c_str());
+	ifstream activityFile;
+	activityFile.open(file.c_str());
 	
 	while (! activityFile.eof()){
 		getline(activityFile, activity);
@@ -25,7 +27,7 @@ cityClass::cityClass(string city, string c, string l, double p, double costR, do
 	}
 }
 
-double cityClass::matchRanks(vector<double> userRanks){
+double cityClass::matchRanks(vector<int> userRanks){
 	double cityRanks[] = {costRanking, adventureRanking, culturalRanking, educationalRanking, scenicRanking};
 	double chiSum = 0;
 
@@ -52,14 +54,15 @@ void cityClass::displayInfo(){
 }
 
 //Find nearby by using the longitude/latitude cordinates, return distance from current city to the iterator city
-int cityClass::findNearby(string currentCity, int radius){
+int cityClass::findNearby(cityClass currentCity, int radius){
 	double longitudeDis;
 	double latitudeDis;
+	double y1, y2, x1, x2;
 	y1=latitude*60*1852; //pseudo-coordinates in meters, 1852 is meters to nautical mile (assume a sphere, although earth isnt)
 	x1=(longitude*60*1852)/(cos(latitude));
-	y2=(currentCity.latitude())*60*1852;
-	x2=((currentCity.longitude())*60*1852)/(cos(currentCity.latitude()));
-	return sqrt((x2-x1)^2 + (y2-y1)^2);
+	y2=(currentCity.getLatitude())*60*1852;
+	x2=((currentCity.getLongitude())*60*1852)/(cos(currentCity.getLatitude()));
+	return sqrt(pow((x2-x1),2) + pow((y2-y1),2));
 }
 
 string cityClass::getCity(){
