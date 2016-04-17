@@ -181,7 +181,7 @@ int main(){
 				//Shuffle cities and pick a random one, then display possible things to do within the cities
 				srand ( time(NULL) ); //initialize the random seed
 	  			RandIndex = rand() % 23; //generates a random number between 0 and 23
-  				cout << Cities[RandIndex]; //pick a random city and display that shit
+  				Cities[RandIndex]->displayInfo(); //pick a random city and display that shit
 				break;
 			case 6:
 				cout << "Have a great trip!" << endl;
