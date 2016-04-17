@@ -10,6 +10,7 @@
 #include <vector>
 #include <time.h>
 #include <stdlib.h>
+#include <iomanip>
 using namespace std;
 
 int main(){
@@ -17,11 +18,12 @@ int main(){
 	int answer=0; //customer choice for the program
 	string country;
 	string curCity; //current location of person
-	int max, maxMatch, count, radius, RandIndex, match;
+	int max, maxMatch, count, RandIndex, match;
+	double radius;
 	vector<int> cityMatch(23,0);
 	vector<string> list;
 	string file, item;
-	double minRad, minChi;
+	double minChi;
 	vector<int> userRanks(5,0);
 	ifstream bucketList;
 
@@ -125,11 +127,10 @@ int main(){
 				//Enter a location (city or country or both and then computer decides if city or country)
 				cout << "Where are you currently located?" << endl;
 				cin >> curCity;
-				cout << "Within what radius do you want the nearby cities?";
+				cout << "Within what radius do you want the nearby cities (in kilometers)?";
 				cin >> radius;
 				//Use the longitude and latitude of all the different cities and to find distance and then compare with the radius
 				count=0;
-				minRad=1000*radius;
 				match=-1;
 				for (int i=0;i<23;i++){
 					if (curCity.compare(Cities[i]->getCity())==0)
@@ -140,22 +141,19 @@ int main(){
 					break;
 				}	
 				for (int i=0;i<23;i++){	
-					if (Cities[i]->findNearby(*Cities[match], radius) < radius){ //compute chi square and find most similar city
-						match=i;
-						minRad=Cities[i]->matchRanks(userRanks);
+					if ((Cities[i]->findNearby(*Cities[match]) < radius) && (curCity.compare(Cities[i]->getCity())!=0)){
+						cout << Cities[i] -> getCity() << endl;
+						count++;
 					}
 				}
 				if (count == 0)
 					cout << "I'm sorry, there are no nearby cities in our database.  We can help you explore other fun places though, please try again!" << endl;
-				else
-					Cities[match]->displayInfo();
 				break;
 			case 4:
 				//Chi squared (to match the actual versus wanted)
 				//Ask for food, education, cost, scenic, and adventure preferences
 				//Ask if they want a smaller city
 				//Ask if they have a language preference
-	
 				cout << "Please enter your preferences on a 1-10 scale!" << endl;
 				cout << "Cost: ";
 				cin >> userRanks[0];
