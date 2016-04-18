@@ -11,7 +11,7 @@
 #include <string>
 using namespace std;
 
-class Activity {
+class Activity{
 
 	public:
 		Activity(string); //constructor

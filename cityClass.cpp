@@ -76,7 +76,10 @@ string cityClass::getCity(){
 }
 
 string cityClass::getCountry(){
-	return country;
+	string lowerCountry=country;
+	for (int i=0;i<lowerCountry.size();i++)
+		lowerCountry[i]=tolower(lowerCountry[i]);
+	return lowerCountry;
 }
 
 double cityClass::getLongitude(){

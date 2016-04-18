@@ -15,7 +15,8 @@
 #include <stdio.h>
 using namespace std;
 
-class cityClass : public Activity{
+class cityClass : public Activity{	
+
 	public:
 		cityClass(string, string, string, unsigned int, int, int, int, int, int, double, double); //constructor
 		double matchRanks(vector<int>); //use a chi-square like test to determine how similar the rankings gathered from the wish list are to the city

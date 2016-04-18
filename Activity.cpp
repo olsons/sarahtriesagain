@@ -25,11 +25,12 @@ Activity::Activity(string cityname){
 
 int Activity::bucketMatch(vector<string> bucketList){
         int match=0;
-        string activity;
 
         for (int i=0;i<activities.size();i++){
-                for (int k=0;k<activities[i].size();k++)
-                        activity[k]=tolower(activities[i][k]);
+		string activity=activities[i];
+                for (int k=0;k<activity.size();k++)
+                        activity[k]=tolower(activity[k]);
+		cout << activity << " " << endl;
                 for (int j=0;j<bucketList.size();j++){
                         if (activity.compare(bucketList[j])==0){
                                 match++;
