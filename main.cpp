@@ -4,6 +4,7 @@
  */
 
 #include "cityClass.h"
+#include "Activity.h"
 #include <iostream>
 #include <string>
 #include <fstream>

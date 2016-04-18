@@ -6,6 +6,7 @@
 #ifndef SKTRAVEL_CITYCLASS_H
 #define SKTRAVEL_CITYCLASS_H
 
+#include "Activity.h"
 #include <iostream>
 #include <string>
 #include <vector>
@@ -14,7 +15,7 @@
 #include <stdio.h>
 using namespace std;
 
-class cityClass {
+class cityClass : public Activity{
 	public:
 		cityClass(string, string, string, unsigned int, int, int, int, int, int, double, double); //constructor
 		double matchRanks(vector<int>); //use a chi-square like test to determine how similar the rankings gathered from the wish list are to the city
@@ -25,7 +26,6 @@ class cityClass {
 		string getCountry();
 		double getLatitude();
 		double getLongitude();
-		int bucketMatch(vector<string>);
 	
 	private:
 		string cityname;
@@ -39,7 +39,6 @@ class cityClass {
 		int scenicRanking; //ranking 1-10 based on the overall beauty of the city and landmarks
 		double longitude; //longitude of a city to see nearby cities
 		double latitude; //latitude of a city to see nearby cities
-		vector<string> activities; //list all the activities within the city
 };
 
 #endif //SKTRAVEL_CITYCLASS_H

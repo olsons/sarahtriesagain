@@ -11,22 +11,24 @@
 #include <fstream>
 #include <stdio.h>
 #include "cityClass.h"
+#include "Activity.h"
 
 #define PI 3.14159265
 using namespace std;
 
 //Constructor
-cityClass::cityClass(string city, string c, string l, unsigned int p, int costR, int aR, int culR, int eR, int sR,double la, double lo) : cityname(city), country(c), language(l), population(p), costRanking(costR), adventureRanking(aR), culturalRanking(culR), educationalRanking(eR), scenicRanking(sR), latitude(la), longitude(lo){
-	string activity;
-	string file = cityname;
-	file.append(".txt");
-	ifstream activityFile;
-	activityFile.open(file.c_str());
-	
-	while (! activityFile.eof()){
-		getline(activityFile, activity);
-		activities.push_back(activity);
-	}
+cityClass::cityClass(string city, string c, string l, unsigned int p, int costR, int aR, int culR, int eR, int sR,double la, double lo) : Activity(city){
+	cityname=city;
+	country=c;
+	language=l;
+	population=p;
+	costRanking=costR;
+	adventureRanking=aR; 
+	culturalRanking=culR; 
+	educationalRanking=eR; 
+	scenicRanking=sR; 
+	latitude=la; 
+	longitude=lo;
 }
 
 double cityClass::matchRanks(vector<int> userRanks){
@@ -51,8 +53,7 @@ void cityClass::displayInfo(){
 	cout << "	Educational: " << educationalRanking << endl;
 	cout << "	Beauty: " << scenicRanking << endl;
 	cout << "Things to do: " << endl;
-	for (int i=0;i<5;i++)
-		cout << "	" << activities[i] << endl;
+	Activity::printActivities();
 }
 
 //Find nearby by using the longitude/latitude cordinates, return distance from current city to the iterator city
@@ -84,20 +85,4 @@ double cityClass::getLongitude(){
 
 double cityClass::getLatitude(){
 	return latitude;
-}
-
-int cityClass::bucketMatch(vector<string> bucketList){
-	int match=0;
-	string activity;
-
-	for (int i=0;i<activities.size();i++){
-		for (int k=0;k<activities[i].size();k++)
-			activity[k]=tolower(activities[i][k]);
-		cout << activity << " ";
-		for (int j=0;j<bucketList.size();j++){		
-			if (activity.compare(bucketList[j]))
-				match++;
-		}
-	}
-	return match;
 }

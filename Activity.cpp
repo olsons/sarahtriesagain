@@ -1,0 +1,45 @@
+/*Kim Kosman and Sarah Olson
+ *
+ * SKTravel
+ * Activity class implementation
+ */
+
+#include <iostream>
+#include <vector>
+#include <string>
+#include <fstream>
+#include "Activity.h"
+
+Activity::Activity(string cityname){
+	string activity;
+        string file = cityname;
+        file.append(".txt");
+        ifstream activityFile;
+        activityFile.open(file.c_str());
+
+        while (! activityFile.eof()){
+                getline(activityFile, activity);
+                activities.push_back(activity);
+        }
+}
+
+int Activity::bucketMatch(vector<string> bucketList){
+        int match=0;
+        string activity;
+
+        for (int i=0;i<activities.size();i++){
+                for (int k=0;k<activities[i].size();k++)
+                        activity[k]=tolower(activities[i][k]);
+                cout << activity << " ";
+                for (int j=0;j<bucketList.size();j++){
+                        if (activity.compare(bucketList[j]))
+                                match++;
+                }
+        }
+        return match;
+}
+
+void Activity::printActivities(){
+        for (int i=0;i<5;i++)
+                cout << "       " << activities[i] << endl;
+}
