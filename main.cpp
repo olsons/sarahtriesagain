@@ -79,17 +79,11 @@ int main(){
 				cout << "Where can we find your bucket list?  ";
 				cin >> file;
 				bucketList.open(file.c_str());
-				if (bucketList.is_open()){ //open file
-					while(! bucketList.eof()){
-						bucketList >> item;
+				while(! bucketList.eof()){
+						getline(bucketList, item);
 						for (int i=0;i<item.size();i++)
 							item[i]=tolower(item[i]);
 						list.push_back(item);
-					}
-				}
-				else{
-					cout << "We couldn't find your bucket list, please try again." << endl;
-					break;
 				}
 			
 				for (int i=0;i<23;i++)
