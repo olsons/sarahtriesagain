@@ -20,7 +20,7 @@ class cityClass {
 		double matchRanks(vector<int>); //use a chi-square like test to determine how similar the rankings gathered from the wish list are to the city
 	       	string findLodging(); //see if an airbnb or a hostel is a better option
 		void displayInfo(); //display general information
-		double findNearby(cityClass); //find nearby cities
+		double findNearby(cityClass, int); //find nearby cities
 		string getCity();
 		string getCountry();
 		double getLatitude();
