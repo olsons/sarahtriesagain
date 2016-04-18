@@ -75,12 +75,14 @@ int main(){
 
 		switch(answer){
 			case 1:
-				cout << "Where can we find your bucket list?" << endl;
+				cout << "Where can we find your bucket list?  ";
 				cin >> file;
 				bucketList.open(file.c_str());
-				if (bucketList.is_open()){
+				if (bucketList.is_open()){ //open file
 					while(! bucketList.eof()){
-						getline(bucketList, item);
+						bucketList >> item;
+						for (int i=0;i<item.size();i++)
+							item[i]=tolower(item[i]);
 						list.push_back(item);
 					}
 				}
@@ -94,12 +96,13 @@ int main(){
 			
 				max=0;
 				for (int i=0;i<23;i++){
+					cout << cityMatch[i] << endl;
 					if (cityMatch[i]>max){
 						max=cityMatch[i];
 						maxMatch=i;
 					}
 				}
-
+				
 				if (max>0)
 					Cities[maxMatch]->displayInfo();
 				else if (max==0)

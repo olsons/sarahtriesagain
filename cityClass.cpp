@@ -88,10 +88,13 @@ double cityClass::getLatitude(){
 
 int cityClass::bucketMatch(vector<string> bucketList){
 	int match=0;
+	string activity;
 
 	for (int i=0;i<activities.size();i++){
-		for (int j=0;j<bucketList.size();j++){
-			if (activities[i]==bucketList[j])
+		for (int k=0;k<activities[i].size();k++)
+			activity[k]=tolower(activities[i][k]);
+		for (int j=0;j<bucketList.size();j++){		
+			if (activity.compare(bucketList[j]))
 				match++;
 		}
 	}
