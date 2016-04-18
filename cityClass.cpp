@@ -93,6 +93,7 @@ int cityClass::bucketMatch(vector<string> bucketList){
 	for (int i=0;i<activities.size();i++){
 		for (int k=0;k<activities[i].size();k++)
 			activity[k]=tolower(activities[i][k]);
+		cout << activity << " ";
 		for (int j=0;j<bucketList.size();j++){		
 			if (activity.compare(bucketList[j]))
 				match++;

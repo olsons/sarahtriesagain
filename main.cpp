@@ -96,7 +96,6 @@ int main(){
 			
 				max=0;
 				for (int i=0;i<23;i++){
-					cout << cityMatch[i] << endl;
 					if (cityMatch[i]>max){
 						max=cityMatch[i];
 						maxMatch=i;
