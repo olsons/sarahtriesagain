@@ -107,7 +107,6 @@ int main(){
 */			
 				for (int i=0;i<23;i++)
 					cityMatch[i] = Cities[i]->bucketMatch(bucket.getList());
->>>>>>> 18bb849b0df6903b1ebead9612e03c17c80e46fa
 			
 				max=0;
 				for (int i=0;i<23;i++){
