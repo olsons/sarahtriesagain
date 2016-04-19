@@ -21,7 +21,7 @@ int main(){
 	int max, maxMatch, count, RandIndex, match;
 	double radius;
 	vector<int> cityMatch(23,0);
-	vector<string> list;
+	vector<string> list; //list of items in bucket list
 	string file, item;
 	double minChi;
 	vector<int> userRanks(5,0);
@@ -91,8 +91,9 @@ int main(){
 					break;
 				}
 			
-				for (int i=0;i<23;i++)
+				for (int i=0;i<23;i++){
 					cityMatch[i] = Cities[i]->bucketMatch(list);
+				}
 			
 				max=0;
 				for (int i=0;i<23;i++){
@@ -102,10 +103,12 @@ int main(){
 					}
 				}
 				
-				if (max>0)
+				if (max>0){
 					Cities[maxMatch]->displayInfo();
-				else if (max==0)
+				}
+				else if (max==0){
 					cout << "We could not find a city to match your bucket list. Please try again!" << endl;
+				}
 				break;
 			case 2:
 				cout << "What country are you interested in exploring?" << endl;
