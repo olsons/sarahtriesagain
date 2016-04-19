@@ -64,7 +64,7 @@ int main(){
 		//prompts for options
 		while (answer==0){
 			cout << "Welcome to our travel app! What would you like to do today? " << endl;
-			cout << "1) Enter in a bucket list and we will match as many items as we can " << endl;
+			cout << "1) Enter in a bucket list or edit an existing one " << endl;
 			cout << "2) See cities in a particular country " << endl;
 			cout << "3) See cities near you " << endl; 
 			cout << "4) Customize a trip based on preferences" << endl;
@@ -114,7 +114,8 @@ int main(){
 					cin >> choice;
 					if (choice==1){
 						bucket.print();
-					}
+						break;
+						}
 					else if (choice==2){
 						cout << "What would you like to add to your bucket list?" << endl;
 						cout << "Please enter 'end' when you are finished." << endl;
@@ -137,6 +138,7 @@ int main(){
 						bucket.clear();
 						cout << "Your bucket list has been erased." << endl;
 						hasList=false;
+						break;
 					}
 					else{
 						cout << "Your choice was invalid.  Please try again." << endl;
