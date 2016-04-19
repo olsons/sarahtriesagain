@@ -1,11 +1,12 @@
 london eye
-market
+bourough market
 tower of london
+fish and chips
 trinity college
-trevi fountain
 gelato
 colosseum
 vatican
+<<<<<<< HEAD
 st. peter's basilica
 Petrin Hill
 Old Town Square 
@@ -16,3 +17,5 @@ Prague astronomical clock (old clock)
 Vysehrad (medieval castle)
 St. Vitus Cathedral
 Petrin Lookout Tower
+=======
+>>>>>>> 18bb849b0df6903b1ebead9612e03c17c80e46fa

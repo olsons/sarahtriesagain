@@ -1,8 +1,8 @@
 Hyde Park
 Borough Market
-Buckingham Palace (queen)
+Buckingham Palace
 Globe Theatre
-London Eye (ferris wheel)
+London Eye
 Tower Bridge
 Westminster Abbey (Gothic church)
 St. Paul's Pathedral (church and garden)
@@ -27,6 +27,7 @@ Royal Opera House
 National Portrait Gallary
 Bacon Butty
 Pie and Mash
+Fish and Chips
 Potted Shrimps
 Meat Fruit
 Scotch Egg

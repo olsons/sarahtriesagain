@@ -4,6 +4,8 @@
  */
 
 #include "cityClass.h"
+#include "Activity.h"
+#include "BucketList.h"
 #include <iostream>
 #include <string>
 #include <fstream>
@@ -25,6 +27,7 @@ int main(){
 	string file, item;
 	double minChi;
 	vector<int> userRanks(5,0);
+	BucketList bucket;
 	ifstream bucketList;
 
 	//All of the instantiations of the city classes
@@ -75,17 +78,23 @@ int main(){
 
 		switch(answer){
 			case 1:
-				cout << "Where can we find your bucket list?  ";
-				cin >> file;
+				cout << "What do you want to add to your bucket list?" << endl;
+				cout << "Please enter 'end' when you are finished." << endl;
+				getline(cin, item);
+				while (item.compare("end") != 0){
+					bucket.addItem(item);
+					getline(cin, item);
+				}
+/*				cin >> file;
 				bucketList.open(file.c_str());
-				if (bucketList.is_open()){ //open file
-					while(! bucketList.eof()){
-						bucketList >> item;
+				while(! bucketList.eof()){
+						getline(bucketList, item);
 						for (int i=0;i<item.size();i++)
 							item[i]=tolower(item[i]);
+						cout << item << endl;
 						list.push_back(item);
-					}
 				}
+<<<<<<< HEAD
 				else{
 					cout << "We couldn't find your bucket list, please try again." << endl;
 					break;
@@ -94,6 +103,11 @@ int main(){
 				for (int i=0;i<23;i++){
 					cityMatch[i] = Cities[i]->bucketMatch(list);
 				}
+=======
+*/			
+				for (int i=0;i<23;i++)
+					cityMatch[i] = Cities[i]->bucketMatch(bucket.getList());
+>>>>>>> 18bb849b0df6903b1ebead9612e03c17c80e46fa
 			
 				max=0;
 				for (int i=0;i<23;i++){
@@ -113,6 +127,8 @@ int main(){
 			case 2:
 				cout << "What country are you interested in exploring?" << endl;
 				cin >> country;
+				for (int i=0;i<country.size();i++)
+					country[i]=tolower(country[i]);
 				count=0;
 				for (int i=0;i<23;i++){ //print cities in the ocuntry specified
 					if (count == 0 && country.compare(Cities[i]->getCountry()) == 0){
