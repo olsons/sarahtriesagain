@@ -5,6 +5,7 @@
  */
 
 #include "BucketList.h"
+#include <iostream>
 #include <vector>
 #include <string>
 using namespace std;
@@ -24,8 +25,12 @@ void BucketList::removeItem(string item){
 	if (item.compare(list[i]))
 		location=i;
   }
-  if (location != -1)
+  if (location != -1){
 	list.erase(list.begin()+location);
+	size--;
+  }
+  else
+	cout << item << "could not be found in your bucket list. Please try again." << endl;
 }
 
 vector<string> BucketList::getList(){
@@ -35,4 +40,9 @@ vector<string> BucketList::getList(){
 void BucketList::clear(){
   list.clear();
   size=0;
+}
+
+void BucketList::print(){
+  for (int i=0;i<size;i++)
+	cout << list[i] << endl;
 }

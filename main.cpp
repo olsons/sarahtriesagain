@@ -18,12 +18,13 @@ using namespace std;
 int main(){
 	//initialize varaibles
 	int answer=0; //customer choice for the program
+	int choice=0;
+	bool hasList=false;
 	string country;
 	string curCity; //current location of person
 	int max, maxMatch, count, RandIndex, match;
 	double radius;
 	vector<int> cityMatch(23,0);
-	vector<string> list; //list of items in bucket list
 	string file, item;
 	double minChi;
 	vector<int> userRanks(5,0);
@@ -63,7 +64,7 @@ int main(){
 		//prompts for options
 		while (answer==0){
 			cout << "Welcome to our travel app! What would you like to do today? " << endl;
-			cout << "1) Enter in a bucket list and we will match as many items as we can " << endl;
+			cout << "1) Enter in a bucket list or edit an existing one " << endl;
 			cout << "2) See cities in a particular country " << endl;
 			cout << "3) See cities near you " << endl; 
 			cout << "4) Customize a trip based on preferences" << endl;
@@ -78,33 +79,73 @@ int main(){
 
 		switch(answer){
 			case 1:
-				cout << "What do you want to add to your bucket list?" << endl;
-				cout << "Please enter 'end' when you are finished." << endl;
-				getline(cin, item);
-				while (item.compare("end") != 0){
-					bucket.addItem(item);
-					getline(cin, item);
+				choice=0;
+				if (hasList==false){
+					cout << "Do you want to enter in your bucket list (1) manually or (2) from a text file? ";
+					cin >> choice;
+					if (choice==1){
+						cout << "What do you want to have in your bucket list?" << endl;
+						cout << "Please enter 'end' when you are finished." << endl;
+						getline(cin, item);
+						while (item.compare("end") != 0){
+							bucket.addItem(item);
+							getline(cin, item);
+						}
+						hasList=true;
+					}
+					else if (choice==2){
+						cin >> file;
+						bucketList.open(file.c_str());
+						while(! bucketList.eof()){
+								getline(bucketList, item);
+								for (int i=0;i<item.size();i++)
+									item[i]=tolower(item[i]);
+								bucket.addItem(item);
+						}
+						hasList=true;
+					}
+					else{
+						cout << "Your choice was invalid. Please try again." << endl;
+						break;
+					}
 				}
-/*				cin >> file;
-				bucketList.open(file.c_str());
-				while(! bucketList.eof()){
-						getline(bucketList, item);
-						for (int i=0;i<item.size();i++)
-							item[i]=tolower(item[i]);
-						cout << item << endl;
-						list.push_back(item);
-				}
-<<<<<<< HEAD
-				else{
-					cout << "We couldn't find your bucket list, please try again." << endl;
-					break;
+				else if (hasList==true){
+					cout << "Do you want to (1)view your bucket list, (2)add items to your bucket list, (3)remove items from your bucket list, or (3)clear your bucket list?" << endl;
+					cin >> choice;
+					if (choice==1){
+						bucket.print();
+						break;
+						}
+					else if (choice==2){
+						cout << "What would you like to add to your bucket list?" << endl;
+						cout << "Please enter 'end' when you are finished." << endl;
+						getline(cin, item);	
+						while (item.compare("end") != 0){
+							bucket.addItem(item);
+							getline(cin, item);
+						}
+					}
+					else if (choice==3){
+						cout << "What items would you like to remove from your bucket list?" << endl;
+						cout << "Please enter 'end' when you are finished." << endl;
+						getline(cin, item);
+						while (item.compare("end") != 0){
+							bucket.removeItem(item);
+							getline(cin, item);
+						}
+					}
+					else if (choice==4){
+						bucket.clear();
+						cout << "Your bucket list has been erased." << endl;
+						hasList=false;
+						break;
+					}
+					else{
+						cout << "Your choice was invalid.  Please try again." << endl;
+						break;
+					}
 				}
 			
-				for (int i=0;i<23;i++){
-					cityMatch[i] = Cities[i]->bucketMatch(list);
-				}
-=======
-*/			
 				for (int i=0;i<23;i++)
 					cityMatch[i] = Cities[i]->bucketMatch(bucket.getList());
 			
@@ -117,6 +158,7 @@ int main(){
 				}
 				
 				if (max>0){
+					cout << endl << endl << "Your bucket list matches with: " << endl;	
 					Cities[maxMatch]->displayInfo();
 				}
 				else if (max==0){
