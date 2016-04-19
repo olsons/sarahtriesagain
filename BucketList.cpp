@@ -28,7 +28,7 @@ void BucketList::removeItem(string item){
 	list.erase(list.begin()+location);
 }
 
-vector<string> BucketList::getList()
+vector<string> BucketList::getList(){
   return list;
 }
 

@@ -80,10 +80,10 @@ int main(){
 			case 1:
 				cout << "What do you want to add to your bucket list?" << endl;
 				cout << "Please enter 'end' when you are finished." << endl;
-				cin >> item;
-				while (item.compare("end") == 0){
+				getline(cin, item);
+				while (item.compare("end") != 0){
 					bucket.addItem(item);
-					cin >> item;
+					getline(cin, item);
 				}
 /*				cin >> file;
 				bucketList.open(file.c_str());
@@ -100,7 +100,6 @@ int main(){
 			
 				max=0;
 				for (int i=0;i<23;i++){
-					cout << cityMatch[i] << endl;
 					if (cityMatch[i]>max){
 						max=cityMatch[i];
 						maxMatch=i;

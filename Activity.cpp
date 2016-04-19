@@ -30,7 +30,6 @@ int Activity::bucketMatch(vector<string> bucketList){
 		string activity=activities[i];
                 for (int k=0;k<activity.size();k++)
                         activity[k]=tolower(activity[k]);
-		cout << activity << " " << endl;
                 for (int j=0;j<bucketList.size();j++){
                         if (activity.compare(bucketList[j])==0){
                                 match++;
