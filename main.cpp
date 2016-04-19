@@ -110,7 +110,7 @@ int main(){
 					}
 				}
 				else if (hasList==true){
-					cout << "Do you want to (1)view your bucket list, (2)add items to your bucket list, (3)remove items from your bucket list, or (3)clear your bucket list?" << endl;
+					cout << "Do you want to (1)view your bucket list, (2)add items to your bucket list, (3)remove items from your bucket list, or (4)clear your bucket list?" << endl;
 					cin >> choice;
 					if (choice==1){
 						bucket.print();
