@@ -143,7 +143,7 @@ int main(){
 						break;
 					}
 				}
-
+			
 				for (int i=0;i<23;i++)
 					cityMatch[i] = Cities[i]->bucketMatch(bucket.getList());
 			
@@ -159,8 +159,9 @@ int main(){
 					cout << endl << endl << "Your bucket list matches with: " << endl;	
 					Cities[maxMatch]->displayInfo();
 				}
-				else if (max==0)
+				else if (max==0){
 					cout << "We could not find a city to match your bucket list. Please try again!" << endl;
+				}
 				break;
 			case 2:
 				cout << "What country are you interested in exploring?" << endl;
