@@ -5,6 +5,7 @@
  */
 
 #include "BucketList.h"
+#include <iostream>
 #include <vector>
 #include <string>
 using namespace std;
@@ -35,4 +36,9 @@ vector<string> BucketList::getList(){
 void BucketList::clear(){
   list.clear();
   size=0;
+}
+
+void BucketList::print(){
+  for (int i=0;i<size;i++)
+	cout << list[i] << endl;
 }

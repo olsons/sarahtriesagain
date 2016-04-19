@@ -19,6 +19,7 @@ class BucketList {
 		void removeItem(string);
 		vector<string> getList();
 		void clear();
+		void print();
 
 	private:
 		vector<string> list;
