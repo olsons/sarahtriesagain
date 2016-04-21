@@ -8,6 +8,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <algorithm>
 using namespace std;
 
 BucketList::BucketList(){
@@ -45,4 +46,5 @@ void BucketList::clear(){
 void BucketList::print(){
   for (int i=0;i<size;i++)
 	cout << list[i] << endl;
+  cout << "...." << list[0] << "....." << endl;
 }
