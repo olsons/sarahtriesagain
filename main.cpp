@@ -55,9 +55,16 @@ int main(){
 	cityClass Barcelona("Barcelona", "Spain", "Spanish", 1602000, 4, 7, 6, 7, 9, 41.3851, 2.1734);
 	cityClass Berlin("Berlin", "Germany", "German", 3502000, 7, 5, 9, 10, 7, 52.52, 13.405);
 	cityClass Amsterdam("Amsterdam", "Netherlands", "Dutch", 779808, 3, 8, 7, 8, 7, 52.3702, 4.8952);
+	cityClass Athens("Athens", "Greece", "Greek", 664064, 5, 5, 9, 9, 9, 38.9839, 23.7294);
+	cityClass Goreme("Goreme", "Turkey", "Turkish", 2000, 7, 8, 3, 2, 9, 38.6448, 34.8313);
+	cityClass Sochi("Sochi", "Russia", "Russian", 364171, 6, 5, 6, 3, 4, 43.6028, 39.7342);
+	cityClass Zermatt("Zermatt", "Switzerland", "German", 5775, 3, 9, 6, 3, 10, 46.0207, 7.7491);
+	cityClass Krakow("Krawkow", "Poland", "Polish", 759131, 8, 3, 7, 7, 6, 50.0647, 19.945);
+	cityClass Moscow("Moscow", "Russia", "Russian", 11920000, 3, 4, 8, 8, 7, 55.7558, 37.6173);
+	cityClass Reykjavik("Reykjavik", "Iceland", "Icelandic", 119289, 4, 10, 5,4, 9, 64.1265, 21.8174);
 
 	// array of cities
-	cityClass * Cities[23] = {&Salzburg, &Vienna, &Venice, &Tuscany, &StPetersburg, &Stockholm, &Rome, &Prague, &Paris, &Monaco, &Madrid, &London, &Lisbon, &Istanbul, &Florence, &Edinburgh, &Dublin, &Budapest, &Brussels, &Bruges, &Barcelona, &Berlin, &Amsterdam};
+	cityClass * Cities[30] = {&Salzburg, &Vienna, &Venice, &Tuscany, &StPetersburg, &Stockholm, &Rome, &Prague, &Paris, &Monaco, &Madrid, &London, &Lisbon, &Istanbul, &Florence, &Edinburgh, &Dublin, &Budapest, &Brussels, &Bruges, &Barcelona, &Berlin, &Amsterdam, &Athens, &Goreme, &Sochi, &Zermatt, &Krakow, &Moscow, &Reykjavik};
 
 	while (1){
 		answer=0;
