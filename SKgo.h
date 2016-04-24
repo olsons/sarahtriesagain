@@ -8,6 +8,7 @@
 #define SKGO_H
 
 #include "cityClass.h"
+#include "BucketList.h"
 #include <string>
 
 class SKgo {
@@ -22,6 +23,7 @@ class SKgo {
 		void randOption();
 
 	private:
+		BucketList bucket;
 		cityClass * Cities[30]; //array of pointers to cities
 		bool hasList;
 
