@@ -20,11 +20,12 @@ int main(){
 	int answer=0; //customer choice for the program
 	int choice=0;
 	bool hasList=false;
-	string country;
+	string country; 
+	string language; 
 	string curCity; //current location of person
 	int max, maxMatch, count, RandIndex, match;
 	double radius;
-	vector<int> cityMatch(23,0);
+	vector<int> cityMatch(30,0);
 	string file, item;
 	double minChi;
 	vector<int> userRanks(5,0);
@@ -60,11 +61,12 @@ int main(){
 	cityClass Sochi("Sochi", "Russia", "Russian", 364171, 6, 5, 6, 3, 4, 43.6028, 39.7342);
 	cityClass Zermatt("Zermatt", "Switzerland", "German", 5775, 3, 9, 6, 3, 10, 46.0207, 7.7491);
 	cityClass Krakow("Krawkow", "Poland", "Polish", 759131, 8, 3, 7, 7, 6, 50.0647, 19.945);
-	cityClass Moscow("Moscow", "Russia", "Russian", 11920000, 3, 4, 8, 8, 7, 55.7558, 37.6173);
-	cityClass Reykjavik("Reykjavik", "Iceland", "Icelandic", 119289, 4, 10, 5,4, 9, 64.1265, 21.8174);
+	cityClass Moscow("Moscow", "Russia", "Russian", 1192, 3, 4, 8, 8, 7, 55.7558, 37.6173);
+	cityClass Reykjavik("Reykjavik", "Iceland", "Icelandic", 119289, 4, 10, 5, 4, 9, 64.1265, 21.8174); 
+
 
 	// array of cities
-	cityClass * Cities[29] = {&Salzburg, &Vienna, &Venice, &Tuscany, &StPetersburg, &Stockholm, &Rome, &Prague, &Paris, &Monaco, &Madrid, &London, &Lisbon, &Istanbul, &Florence, &Edinburgh, &Dublin, &Budapest, &Brussels, &Bruges, &Barcelona, &Berlin, &Amsterdam, &Athens, &Goreme, &Sochi, &Zermatt, &Krakow, &Moscow, &Reykjavik};
+	cityClass * Cities[30] = {&Salzburg, &Vienna, &Venice, &Tuscany, &StPetersburg, &Stockholm, &Rome, &Prague, &Paris, &Monaco, &Madrid, &London, &Lisbon, &Istanbul, &Florence, &Edinburgh, &Dublin, &Budapest, &Brussels, &Bruges, &Barcelona, &Berlin, &Amsterdam, &Athens, &Goreme, &Sochi, &Zermatt, &Krakow, &Moscow, &Reykjavik};
 
 	while (1){
 		answer=0;
@@ -75,8 +77,9 @@ int main(){
 			cout << "2) See cities in a particular country " << endl;
 			cout << "3) See cities near you " << endl; 
 			cout << "4) Customize a trip based on preferences" << endl;
-			cout << "5) Random adventure" << endl;
-			cout << "6) Quit" << endl;
+			cout << "5) See cities that speak a certain language" << endl;
+			cout << "6) Random adventure" << endl;
+			cout << "7) Quit" << endl;
 			cin >> answer;
 			if (answer < 1 || answer > 6){
 				cout << "You did not enter in a correct number. Please try again" << endl;
@@ -153,11 +156,11 @@ int main(){
 					}
 				}
 			
-				for (int i=0;i<23;i++)
+				for (int i=0;i<30;i++)
 					cityMatch[i] = Cities[i]->bucketMatch(bucket.getList());
 			
 				max=0;
-				for (int i=0;i<23;i++){
+				for (int i=0;i<30;i++){
 					if (cityMatch[i]>max){
 						max=cityMatch[i];
 						maxMatch=i;
@@ -178,7 +181,7 @@ int main(){
 				for (int i=0;i<country.size();i++)
 					country[i]=tolower(country[i]);
 				count=0;
-				for (int i=0;i<23;i++){ //print cities in the ocuntry specified
+				for (int i=0;i<30;i++){ //print cities in the ocuntry specified
 					if (count == 0 && country.compare(Cities[i]->getCountry()) == 0){
 						cout << "We can help you explore the following cities in " << country << ": " << endl;
 						cout << Cities[i]->getCity() << endl;
@@ -201,7 +204,7 @@ int main(){
 				//Use the longitude and latitude of all the different cities and to find distance and then compare with the radius
 				count=0;
 				match=-1;
-				for (int i=0;i<23;i++){
+				for (int i=0;i<30;i++){
 					if (curCity.compare(Cities[i]->getCity())==0)
 						match=i;
 				}
@@ -209,7 +212,7 @@ int main(){
 					cout << "Sorry, your city could not be found. Please try again!" << endl;
 					break;
 				}	
-				for (int i=0;i<23;i++){	
+				for (int i=0;i<30;i++){	
 					if ((Cities[i]->findNearby(*Cities[match]) < radius) && (curCity.compare(Cities[i]->getCity())!=0)){
 						cout << Cities[i] -> getCity() << endl;
 						count++;
@@ -236,7 +239,7 @@ int main(){
 				cin >> userRanks[4];
 
 				minChi=1000;
-                	        for (int i=0;i<23;i++){
+                	        for (int i=0;i<30;i++){
                         	        if (Cities[i]->matchRanks(userRanks) > minChi){ //compute chi square and find most similar city
                                 	        match=i;
                                         	minChi=Cities[i]->matchRanks(userRanks);
@@ -245,12 +248,32 @@ int main(){
                 	        Cities[match]->displayInfo();
 				break;
 			case 5:
-				//Shuffle cities and pick a random one, then display possible things to do within the cities
-				srand ( time(NULL) ); //initialize the random seed
-	  			RandIndex = rand() % 23; //generates a random number between 0 and 23
-  				Cities[RandIndex]->displayInfo(); //pick a random city and display that shit
+				cout << "What language would you like to experience?" << endl;
+				cin >> language;
+				for (int i=0;i<language.size();i++)
+					language[i]=tolower(language[i]);
+				count=0;
+				for (int i=0;i<30;i++){ //print cities in the ocuntry specified
+					if (count == 0 && language.compare(Cities[i]->getLanguage()) == 0){
+						cout << "We can help you explore the following cities in " << country << ": " << endl;
+						cout << Cities[i]->getCity() << endl;
+						count++;
+					}
+					else if (language.compare(Cities[i]->getLanguage()) == 0){
+						cout << Cities[i]->getCity() << endl;
+						count++;
+					}
+				}	
+				if (count == 0)
+					cout << "I'm sorry, we don't have information on that language.  We can help you explore other fun places though, please try again!" << endl;
 				break;
 			case 6:
+				//Shuffle cities and pick a random one, then display possible things to do within the cities
+				srand ( time(NULL) ); //initialize the random seed
+	  			RandIndex = rand() % 30; //generates a random number between 0 and 30
+  				Cities[RandIndex]->displayInfo(); //pick a random city and display that shit
+				break;
+			case 7:
 				cout << "Have a great trip!" << endl;
 				return 0;
 				break;
