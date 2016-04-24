@@ -32,6 +32,7 @@ int main(){
 	BucketList bucket;
 	ifstream bucketList;
 
+
 	//All of the instantiations of the city classes
 	cityClass Salzburg("Salzburg", "German","Austria",145871, 5, 9, 7, 5, 9, 47.9085, 13.0550);
 	cityClass Vienna("Vienna", "Austria", "German", 1741000, 8, 4, 7, 7, 7, 48.2082, 16.3738);
@@ -60,7 +61,7 @@ int main(){
 	cityClass Goreme("Goreme", "Turkey", "Turkish", 2000, 7, 8, 3, 2, 9, 38.6448, 34.8313);
 	cityClass Sochi("Sochi", "Russia", "Russian", 364171, 6, 5, 6, 3, 4, 43.6028, 39.7342);
 	cityClass Zermatt("Zermatt", "Switzerland", "German", 5775, 3, 9, 6, 3, 10, 46.0207, 7.7491);
-	cityClass Krakow("Krawkow", "Poland", "Polish", 759131, 8, 3, 7, 7, 6, 50.0647, 19.945);
+	cityClass Krakow("Krakow", "Poland", "Polish", 759131, 8, 3, 7, 7, 6, 50.0647, 19.945);
 	cityClass Moscow("Moscow", "Russia", "Russian", 11920000, 3, 4, 8, 8, 7, 55.7558, 37.6173);
 	cityClass Reykjavik("Reykjavik", "Iceland", "Icelandic", 119289, 4, 10, 5, 4, 9, 64.1265, 21.8174); 
 
@@ -81,7 +82,7 @@ int main(){
 			cout << "6) Random adventure" << endl;
 			cout << "7) Quit" << endl;
 			cin >> answer;
-			if (answer < 1 || answer > 6){
+			if (answer < 1 || answer > 7){
 				cout << "You did not enter in a correct number. Please try again" << endl;
 				answer=0;
 			}
