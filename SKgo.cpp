@@ -204,6 +204,28 @@ void SKgo::countryOption(){
 	break;
 }
 
+void SKgo::languageOption(){
+	cout << "What language would you like to experience?" << endl;
+	cin >> language;
+	for (int i=0;i<language.size();i++)
+		language[i]=tolower(language[i]);
+	count=0;
+	for (int i=0;i<30;i++){ //print cities in the ocuntry specified
+		if (count == 0 && language.compare(Cities[i]->getLanguage()) == 0){
+			cout << "We can help you explore the following cities in " << country << ": " << endl;
+			cout << Cities[i]->getCity() << endl;
+			count++;
+		}
+		else if (language.compare(Cities[i]->getLanguage()) == 0){
+			cout << Cities[i]->getCity() << endl;
+			count++;
+		}
+	}	
+	if (count == 0)
+		cout << "I'm sorry, we don't have information on that language.  We can help you explore other fun places though, please try again!" << endl;
+				break;
+}
+
 void SKgo::nearOption(){
 	//Enter a location (city or country or both and then computer decides if city or country)
 	cout << "Where are you currently located?" << endl;
@@ -229,7 +251,6 @@ void SKgo::nearOption(){
 	}
         if (count == 0)
         	cout << "I'm sorry, there are no nearby cities in our database.  We can help you explore other fun places though, please try again!" << endl;
-        
 	break;
 }
 
