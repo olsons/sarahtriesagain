@@ -46,7 +46,7 @@ SKgo::SKgo(){
 	cityClass Goreme("Goreme", "Turkey", "Turkish", 2000, 7, 8, 3, 2, 9, 38.6448, 34.8313);
 	cityClass Sochi("Sochi", "Russia", "Russian", 364171, 6, 5, 6, 3, 4, 43.6028, 39.7342);
 	cityClass Zermatt("Zermatt", "Switzerland", "German", 5775, 3, 9, 6, 3, 10, 46.0207, 7.7491);
-	cityClass Krakow("Krawkow", "Poland", "Polish", 759131, 8, 3, 7, 7, 6, 50.0647, 19.945);
+	cityClass Krakow("Krakow", "Poland", "Polish", 759131, 8, 3, 7, 7, 6, 50.0647, 19.945);
 	cityClass Moscow("Moscow", "Russia", "Russian", 11920000, 3, 4, 8, 8, 7, 55.7558, 37.6173);
 	cityClass Reykjavik("Reykjavik", "Iceland", "Icelandic", 119289, 4, 10, 5, 4, 9, 64.1265, 21.8174);
 
@@ -83,7 +83,7 @@ SKgo::SKgo(){
         Cities[29]=&Reykjavik;
 }
 
-void SKgo::options(){
+void SKgo::explore(){
 	int answer;
 
 	while (1){
@@ -130,9 +130,12 @@ void SKgo::options(){
 				rankOption();
 				break;
 			case 5:
-				randOption();
+				languageOption();
 				break;
 			case 6:
+				randOption();
+				break;
+			case 7:
 				cout << "Have a great trip!" << endl;
                                 return;
                                 break;
@@ -241,7 +244,7 @@ void SKgo::countryOption(){
         for (int i=0;i<country.size();i++)
         	country[i]=tolower(country[i]);
 
-        for (int i=0;i<29;i++){ //print cities in the ocuntry specified
+        for (int i=0;i<30;i++){ //print cities in the ocuntry specified
         	if (count == 0 && country.compare(Cities[i]->getCountry()) == 0){
                 	cout << "We can help you explore the following cities in " << country << ": " << endl;
                         cout << Cities[i]->getCity() << endl;
@@ -263,6 +266,7 @@ void SKgo::languageOption(){
 	cin >> language;
 	for (int i=0;i<language.size();i++)
 		language[i]=tolower(language[i]);
+
 	for (int i=0;i<30;i++){ //print cities in the ocuntry specified
 		if (count == 0 && language.compare(Cities[i]->getLanguage()) == 0){
 			cout << "We can help you explore the following cities that speak " << language << ": " << endl;
@@ -329,7 +333,7 @@ void SKgo::rankOption(){
         cout << "Beauty: ";
         cin >> userRanks[4];
 
-        for (int i=0;i<29;i++){
+        for (int i=0;i<30;i++){
         	if (Cities[i]->matchRanks(userRanks) > minChi){ //compute chi square and find most similar city
 			match=i;
                         minChi=Cities[i]->matchRanks(userRanks);
@@ -346,6 +350,6 @@ void SKgo::randOption(){
 
 	//Shuffle cities and pick a random one, then display possible things to do within the cities
 	srand ( time(NULL) ); //initialize the random seed
-	RandIndex = rand() % 30; //generates a random number between 0 and 23
+	RandIndex = rand() % 30; //generates a random number between 0 and 30
 	Cities[RandIndex]->displayInfo(); //pick a random city and display that shit
 }

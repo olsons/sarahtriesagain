@@ -15,7 +15,7 @@ class SKgo {
 
 	public:
 		SKgo(); //constructor
-		void options();
+		void explore();
 		void bucketOption();
 		void countryOption();
 		void languageOption();
