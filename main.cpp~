@@ -16,6 +16,7 @@
 using namespace std;
 
 int main(){
+
 	//initialize varaibles
 	int answer=0; //customer choice for the program
 	int choice=0;
@@ -74,7 +75,18 @@ int main(){
 		answer=0;
 		//prompts for options
 		while (answer==0){
-			cout << "Welcome to our travel app! What would you like to do today? " << endl;
+			cout << "\033[1;31mWelcome to our travel app!\033[0m\n";
+			string line;
+ 			ifstream myfile ("SKGOBanner.txt");
+  			if (myfile.is_open())
+			{
+				while ( getline (myfile,line) ){
+					cout << "\033[1;31m" << line << "\033[0m\n";
+				}
+    				myfile.close();
+  			}
+
+			cout << "What would you like to do today? " << endl;
 			cout << "1) Enter in a bucket list or edit an existing one " << endl;
 			cout << "2) See cities in a particular country " << endl;
 			cout << "3) See cities near you " << endl; 

@@ -8,8 +8,12 @@
 #define SKGO_H
 
 #include "cityClass.h"
+<<<<<<< HEAD
+#include <string> 
+=======
 #include "BucketList.h"
 #include <string>
+>>>>>>> 2be5aa6e1c0bdddeb4340f2e05bcdbf17bed61c4
 
 class SKgo {
 
@@ -18,6 +22,7 @@ class SKgo {
 		void options();
 		void bucketOption();
 		void countryOption();
+		void languageOption();
 		void nearOption();
 		void rankOption();
 		void randOption();

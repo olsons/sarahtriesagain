@@ -17,6 +17,7 @@ class SKgo {
 		void options();
 		void bucketOption();
 		void countryOption();
+		void languageOption();
 		void nearOption();
 		void rankOption();
 		void randOption();
