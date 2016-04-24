@@ -1,7 +1,7 @@
 /*Kim Kosman and Sarah Olson
  *
  * SKTravel
- * SKgo app (main travel planner)
+ * SKGo app (main travel planner)
  */
 
 #ifndef SKGO_H
@@ -12,11 +12,11 @@
 #include <vector>
 #include "BucketList.h"
 
-class SKgo {
+class SKGo {
 
 	public:
-		SKgo(); //constructor
-		~SKgo();
+		SKGo(); //constructor
+		~SKGo();
 		void explore();
 		void bucketOption();
 		void countryOption();

@@ -3,9 +3,9 @@
  * SKTravel main
  */
 
-#include "SKgo.h"
+#include "SKGo.h"
 
 int main(){
-	SKgo TravelPlanner;
+	SKGo TravelPlanner;
 	TravelPlanner.explore();
 }

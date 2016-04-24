@@ -1,13 +1,13 @@
 all: main
 
-main: main.o SKgo.o cityClass.o Activity.o BucketList.o
-	g++ main.o SKgo.o cityClass.o Activity.o BucketList.o -o main
+main: main.o SKGo.o cityClass.o Activity.o BucketList.o
+	g++ main.o SKGo.o cityClass.o Activity.o BucketList.o -o main
 
 main.o: main.cpp	
 	g++ -c main.cpp
 
-SKgo.o: SKgo.cpp
-	g++ -c SKgo.cpp
+SKGo.o: SKGo.cpp
+	g++ -c SKGo.cpp
 
 cityClass.o: cityClass.cpp
 	g++ -c cityClass.cpp

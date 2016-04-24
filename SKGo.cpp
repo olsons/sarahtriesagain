@@ -1,10 +1,10 @@
 /* Kim Kosman and Sarah Olson
  *
  * SKTravel
- * SKgo class implementation
+ * SKGo class implementation
  */
 
-#include "SKgo.h"
+#include "SKGo.h"
 #include "cityClass.h"
 #include "BucketList.h"
 #include <iostream>
@@ -16,7 +16,7 @@
 #include <iomanip>
 using namespace std;
 
-SKgo::SKgo(){
+SKGo::SKGo(){
 	hasList=false;
 
 	Cities.push_back(new cityClass("Salzburg", "German","Austria",145871, 5, 9, 7, 5, 9, 47.9085, 13.0550));
@@ -52,12 +52,12 @@ SKgo::SKgo(){
 
 }
 
-SKgo::~SKgo(){
+SKGo::~SKGo(){
 	for (int i=0;i<Cities.size();i++)
 		delete Cities[i];
 }
 
-void SKgo::explore(){
+void SKGo::explore(){
 	int answer;
 
 	while (1){
@@ -117,7 +117,7 @@ void SKgo::explore(){
 	}
 }
 
-void SKgo::bucketOption(){
+void SKGo::bucketOption(){
 	int choice=0;
 	string file, item;
 	ifstream bucketList;
@@ -209,7 +209,7 @@ void SKgo::bucketOption(){
         }
 }
 
-void SKgo::countryOption(){
+void SKGo::countryOption(){
 	string country;
 	int count = 0;
 	
@@ -233,7 +233,7 @@ void SKgo::countryOption(){
         	cout << "I'm sorry, we don't have information on that country.  We can help you explore other fun places though, please try again!" << endl;
 }
 
-void SKgo::languageOption(){
+void SKGo::languageOption(){
 	string language;
 	int count =0;
 	cout << "What language would you like to experience?" << endl;
@@ -256,7 +256,7 @@ void SKgo::languageOption(){
 		cout << "I'm sorry, we don't have information on that language.  We can help you explore other fun places though, please try again!" << endl;
 }
 
-void SKgo::nearOption(){
+void SKGo::nearOption(){
 	double radius;
 	string curCity;
 	int match = -1;
@@ -286,7 +286,7 @@ void SKgo::nearOption(){
         	cout << "I'm sorry, there are no nearby cities in our database.  We can help you explore other fun places though, please try again!" << endl;
 }
 
-void SKgo::rankOption(){
+void SKGo::rankOption(){
 	vector<int> userRanks(5,0);
 	double minChi=1000;
 	int match=-1;
@@ -319,7 +319,7 @@ void SKgo::rankOption(){
 		cout << "No match could be found. Please try again!" << endl;
 }
 
-void SKgo::randOption(){
+void SKGo::randOption(){
 	int RandIndex;
 
 	//Shuffle cities and pick a random one, then display possible things to do within the cities
