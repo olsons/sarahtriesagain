@@ -90,6 +90,16 @@ void SKgo::options(){
                 answer=0;
 		//prompt for option
                 while (answer==0){
+			cout << "\033[1;31mWelcome to our travel app\033[0m\n";
+                        string line;
+                        ifstream myfile ("SKGOBanner.txt");
+                        if (myfile.is_open())
+                        {
+                                while ( getline (myfile,line) ){
+                                        cout << "\033[1;31m" << line << "\033[0m\n";
+                                }
+                                myfile.close();
+                        }
                         cout << "Welcome to our travel app! What would you like to do today? " << endl;
                         cout << "1) Enter in a bucket list or edit an existing one " << endl;
                         cout << "2) See cities in a particular country " << endl;
@@ -245,14 +255,15 @@ void SKgo::countryOption(){
 }
 
 void SKgo::languageOption(){
+	string language;
+	int count =0;
 	cout << "What language would you like to experience?" << endl;
 	cin >> language;
 	for (int i=0;i<language.size();i++)
 		language[i]=tolower(language[i]);
-	count=0;
 	for (int i=0;i<30;i++){ //print cities in the ocuntry specified
 		if (count == 0 && language.compare(Cities[i]->getLanguage()) == 0){
-			cout << "We can help you explore the following cities in " << country << ": " << endl;
+			cout << "We can help you explore the following cities that speak " << language << ": " << endl;
 			cout << Cities[i]->getCity() << endl;
 			count++;
 		}
@@ -263,7 +274,6 @@ void SKgo::languageOption(){
 	}	
 	if (count == 0)
 		cout << "I'm sorry, we don't have information on that language.  We can help you explore other fun places though, please try again!" << endl;
-				break;
 }
 
 void SKgo::nearOption(){
@@ -294,10 +304,6 @@ void SKgo::nearOption(){
 	}
         if (count == 0)
         	cout << "I'm sorry, there are no nearby cities in our database.  We can help you explore other fun places though, please try again!" << endl;
-<<<<<<< HEAD
-	break;
-=======
->>>>>>> 2be5aa6e1c0bdddeb4340f2e05bcdbf17bed61c4
 }
 
 void SKgo::rankOption(){
