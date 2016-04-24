@@ -9,12 +9,14 @@
 
 #include "cityClass.h"
 #include <string> 
+#include <vector>
 #include "BucketList.h"
 
 class SKgo {
 
 	public:
 		SKgo(); //constructor
+		~SKgo();
 		void explore();
 		void bucketOption();
 		void countryOption();
@@ -25,7 +27,7 @@ class SKgo {
 
 	private:
 		BucketList bucket;
-		cityClass * Cities[30]; //array of pointers to cities
+		vector<cityClass *> Cities; //vector of pointers to cities
 		bool hasList;
 
 };
