@@ -82,6 +82,13 @@ string cityClass::getCountry(){
 	return lowerCountry;
 }
 
+string cityClass::getLanguage(){
+	string lowerLanguage=language;
+	for (int i=0;i<lowerLanguage.size();i++)
+		lowerLanguage[i]=tolower(lowerLanguage[i]);
+	return lowerLanguage;
+}
+
 double cityClass::getLongitude(){
 	return longitude;
 }

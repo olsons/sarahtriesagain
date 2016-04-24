@@ -25,6 +25,7 @@ class cityClass : public Activity{
 		double findNearby(cityClass); //find nearby cities
 		string getCity();
 		string getCountry();
+		string getLanguage();
 		double getLatitude();
 		double getLongitude();
 	
