@@ -33,7 +33,6 @@ int main(){
 	BucketList bucket;
 	ifstream bucketList;
 
-
 	//All of the instantiations of the city classes
 	cityClass Salzburg("Salzburg", "German","Austria",145871, 5, 9, 7, 5, 9, 47.9085, 13.0550);
 	cityClass Vienna("Vienna", "Austria", "German", 1741000, 8, 4, 7, 7, 7, 48.2082, 16.3738);
@@ -86,7 +85,7 @@ int main(){
     				myfile.close();
   			}
 
-			cout << "\033[1;35m    What would you like to do today?\033[0m\n" << endl;
+			cout << "\033[1;35m     What would you like to do today?\033[0m\n" << endl;
 			cout << "1) Enter in a bucket list or edit an existing one " << endl;
 			cout << "2) See cities in a particular country " << endl;
 			cout << "3) See cities near you " << endl; 

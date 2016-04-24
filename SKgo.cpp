@@ -90,28 +90,30 @@ void SKgo::options(){
                 answer=0;
 		//prompt for option
                 while (answer==0){
-			cout << "\033[1;31mWelcome to our travel app\033[0m\n";
-                        string line;
-                        ifstream myfile ("SKGOBanner.txt");
-                        if (myfile.is_open())
-                        {
-                                while ( getline (myfile,line) ){
-                                        cout << "\033[1;31m" << line << "\033[0m\n";
-                                }
-                                myfile.close();
-                        }
-                        cout << "Welcome to our travel app! What would you like to do today? " << endl;
-                        cout << "1) Enter in a bucket list or edit an existing one " << endl;
-                        cout << "2) See cities in a particular country " << endl;
-                        cout << "3) See cities near you " << endl;
-                        cout << "4) Customize a trip based on preferences" << endl;
-                        cout << "5) Random adventure" << endl;
-                        cout << "6) Quit" << endl;
-                        cin >> answer;
-                        if (answer < 1 || answer > 6){
-                                cout << "You did not enter in a correct number. Please try again" << endl;
-                                answer=0;
-                        }
+			cout << "\033[1;35m       Welcome to our travel app\033[0m\n";
+			string line;
+ 			ifstream myfile ("SKGOBanner.txt");
+  			if (myfile.is_open())
+			{
+				while ( getline (myfile,line) ){
+					cout << "\033[1;36m" << line << "\033[0m\n";
+				}
+    				myfile.close();
+  			}
+
+			cout << "\033[1;35m     What would you like to do today?\033[0m\n" << endl;
+			cout << "1) Enter in a bucket list or edit an existing one " << endl;
+			cout << "2) See cities in a particular country " << endl;
+			cout << "3) See cities near you " << endl; 
+			cout << "4) Customize a trip based on preferences" << endl;
+			cout << "5) See cities that speak a certain language" << endl;
+			cout << "6) Random adventure" << endl;
+			cout << "7) Quit" << endl;
+			cin >> answer;
+			if (answer < 1 || answer > 7){
+				cout << "You did not enter in a correct number. Please try again" << endl;
+				answer=0;
+			}
                 }
 
                 switch(answer){

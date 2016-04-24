@@ -33,6 +33,7 @@ int main(){
 	BucketList bucket;
 	ifstream bucketList;
 
+
 	//All of the instantiations of the city classes
 	cityClass Salzburg("Salzburg", "German","Austria",145871, 5, 9, 7, 5, 9, 47.9085, 13.0550);
 	cityClass Vienna("Vienna", "Austria", "German", 1741000, 8, 4, 7, 7, 7, 48.2082, 16.3738);
