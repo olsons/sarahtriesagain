@@ -66,6 +66,7 @@ int main(){
 	cityClass Reykjavik("Reykjavik", "Iceland", "Icelandic", 119289, 4, 10, 5, 4, 9, 64.1265, 21.8174); 
 
 
+
 	// array of cities
 	cityClass * Cities[30] = {&Salzburg, &Vienna, &Venice, &Tuscany, &StPetersburg, &Stockholm, &Rome, &Prague, &Paris, &Monaco, &Madrid, &London, &Lisbon, &Istanbul, &Florence, &Edinburgh, &Dublin, &Budapest, &Brussels, &Bruges, &Barcelona, &Berlin, &Amsterdam, &Athens, &Goreme, &Sochi, &Zermatt, &Krakow, &Moscow, &Reykjavik};
 
@@ -82,7 +83,7 @@ int main(){
 			cout << "6) Random adventure" << endl;
 			cout << "7) Quit" << endl;
 			cin >> answer;
-			if (answer < 1 || answer > 6){
+			if (answer < 1 || answer > 7){
 				cout << "You did not enter in a correct number. Please try again" << endl;
 				answer=0;
 			}
