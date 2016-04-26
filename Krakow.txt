@@ -11,7 +11,7 @@ Krakow Barbican
 Galicia Jewish museum
 Wieliczka Salt Mine
 Old Synagogue
-Lost Souls Alley (horror, scary, haunted house)
+Lost Souls Alley
 Stained Glass Museum
 The Ghetto
 Heros Square
@@ -25,4 +25,5 @@ Rabbit
 Cherries
 Porcini mushrooms
 Grapefruit
-Auschwitz (concentration camp)
+Auschwitz
+concentration camp

@@ -1,23 +1,31 @@
-Grand Place (garden)
+Grand Place
 Manneken Pis
 Maison du Chocolat
 Tapis de fleurs
 Rue de Bouchers
 Musical Instruments Museum
 Royal Museum of the Armed Force and of Military History
-Foret des Soignes (forest, park)
+Foret des Soignes
 Train World
-Notre Dame du Sablon (church)
-Les Galeries Royales Saint-Hubert (shopping)
-Autoworld (cars)
+Notre Dame du Sablon
+Les Galeries Royales Saint-Hubert
+Autoworld
 European Parliament
-Mini Europe (park)
+Mini Europe
 Cantillon Brewery 
 Chocolate
-Belgium Waffle (Gaufre, wafel)
-Sausage (boudin blanc)
-Chicon Au Gratin (Gegratineerde witloof)
-Stoemp (mashed potatoes)
+Belgium Waffle
+Sausage
+boudin blanc
+Chicon Au Gratin
+Stoemp
 Steak
-Speculoos (cookie)
-
+Speculoos
+forest
+church
+shopping
+gaufre
+wafel
+gegratineerde witloof
+mashed potatoes
+cookie

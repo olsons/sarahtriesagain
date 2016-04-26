@@ -1,15 +1,18 @@
 Monte Carlo Harbor
 Casino Square
-Palais du Prince (Prince's Palace of Monaco)
+Palais du Prince
 Princess Grace Botanical Garden
 Larvotto Beach
-Oceanographic Museum (marine museum and aquarium)
+Prince's palace of monaco
+Oceanographic Museum
+marine museum
+aquarium
 French Riviera 
 Cannes
 Opera de Monte-Carlo
 Monte Carlo Casino
 Napoleon museum
-Jardin Exotique de Monaco (plants, garden)
+Jardin Exotique de Monaco
 Japanese Gardens
 The Private Collection of Antique Cars
 Vieux Monaco
@@ -22,4 +25,3 @@ Stocafi
 Fougasse
 Barbagiuan
 Pastry
-

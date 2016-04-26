@@ -1,9 +1,9 @@
 Minnewater Lake
-Markt (central plaza)
+Markt
 De Halve Maan Brewery
 Church of Our Lady
-Groeninge Museum (classical Flemish art)
-Beguinage (abbey, church)
+Groeninge Museum
+Beguinage
 Historic Centre of Brugge
 Burg Square
 Flanders Field Battlefield Day Tour
@@ -26,3 +26,5 @@ Waterzooi
 Fruit juice
 Mussels
 Chocolate
+flemish art
+abbey

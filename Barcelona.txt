@@ -1,21 +1,21 @@
 La Sagrada Familia
-La Rambla (market)
+La Rambla
 Camp Nou
 Mercat de la Boqueria
 Tapas
-Montjuic (mountain, park)
-Gothic Quarter (cathedrals, walking, shopping)
+Montjuic
+Gothic Quarter
 Museu Picasso 
-Parc de la Ciutadella (zoo)
-Poble Espanyol (architecture museum)
-Montserrat (mountain, monastery,rock climbing)
+Parc de la Ciutadella
+Poble Espanyol
+Montserrat
 Tibidado Amusement Park
 Santa Maria del Mar
 Montjuic Castle
-Tibidado (amusement park)
-CosmoCaixa Barcelona (Science museum)
+Tibidado
+CosmoCaixa Barcelona
 Aquarium Barcelona
-Torre Agbar (skyscraper, geyser)
+Torre Agbar
 Calcots
 Escalivada
 Butifarra
@@ -24,4 +24,17 @@ Fideuas
 Suquet de Peix
 Crema Catalana
 Tapas
-Catalan Cuisine 
+Catalan Cuisine
+market
+mountain
+cathedral
+walk
+shop
+zoo
+architecture musem
+mountain
+monastery
+rock climbing
+amusement part
+science museum
+geyser 

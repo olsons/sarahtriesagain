@@ -1,9 +1,13 @@
-Matterhorn (skiing, hiking, glacier)
+Matterhorn
 Klein Matterhorn
 Matterhorn museum
 Gornergrat railway
-Gornergrat Bahn (skiing)
-Gornergrat (observatory)
+Gornergrat Bahn
+Gornergrat
+observatory
+skiing
+hiking
+glacier
 Unterrothorn
 Hohtalli
 Gorner Glacier
@@ -14,10 +18,11 @@ Riffelhorn
 Theodul Pass
 Huts
 Refuge Guides du Cervin
-Riffelsee (lake, hiking)
-Castor (mountain)
-Parrotspitze (mountain)
-Solvay Hut (mountain)
+Riffelsee
+Castor
+mountain
+Parrotspitze
+Solvay Hut
 Sunnegga 
 Mountaineers' Cemetery
 Summit Ski and Snowboard School

@@ -4,25 +4,31 @@ Buckingham Palace
 Globe Theatre
 London Eye
 Tower Bridge
-Westminster Abbey (Gothic church)
-St. Paul's Pathedral (church and garden)
-Tate Modern (Art gallery)
-Palace of Westminster (UK Parliament)
+Westminster Abbey
+Gothic church
+St. Paul's Pathedral
+queen
+Tate Modern
+Palace of Westminster
+Parliament
 National History Museum 
-Big Ben (Clock)
+Big Ben
 Madame Tussauds London
-National Gallarey (Museum)
-London Dungeon (haunted house)
-Trafalgar Square (fountains)
-Globe Theatre (Elizabethan theatre)
-Hyde Park (garden)
-Churchill War Rooms (WWII)
+National Gallery
+London Dungeon
+Trafalgar Square
+Globe Theatre
+Elizabethan theatre
+Hyde Park
+garden
+Churchill War Rooms
+WWII
 Science Museum
 London Zoo
-Regent's Park (sport center)
+Regent's Park
 Sea Life London Aquarium
 National Maritime Museum
-Royal Observatory (Astronomy center)
+Royal Observatory
 Royal Opera House
 National Portrait Gallary
 Bacon Butty
@@ -34,4 +40,3 @@ Scotch Egg
 Kippers
 Sticky Toffe Pudding
 Chelsea Bun
-

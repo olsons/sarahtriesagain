@@ -18,7 +18,7 @@ Aqua Park
 Raw honey
 Pekmex
 Olives
-Pide (flat bread)
+Pide
 Lahmacun
 Simit
 Yufka
@@ -31,6 +31,5 @@ Grilled Baby Onions and Garlic
 Yogurt
 Kasarli Cheese
 Mercemek Kofte
-Coban Salatasi (salad)
+Coban Salatasi
 Green Been Salad
-

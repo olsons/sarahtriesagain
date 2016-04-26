@@ -1,16 +1,16 @@
-Arthur's Seat (hiking, King Arthur)
+Arthur's Seat
 Meadows
 Scottish National Galleries
 Cameo Cinema
 Edinburgh Castle
-Camera Obscura (museum)
-Calton hill (monuments, observatory)
-Holyrood Palace (royal palace and abbey tours)
-Princes Street (shopping)
+Camera Obscura
+Calton hill
+Holyrood Palace
+Princes Street
 Princes Street Gardens
-Scott Monument (Gothic Sir Walter Scott Memorial)
-National War Museum (Military exhibition)
-Scotch Whisky Experience (distillery)
+Scott Monument
+National War Museum
+Scotch Whisky Experience
 National Museum of Scotland
 Edinburgh Gin Distillery
 Hog Roast Roll
@@ -19,3 +19,12 @@ Curry
 Grilled Cheese
 Raspberry Brownies
 Dumplings
+hiking
+King Arthur
+monuments
+royal palace
+abbey tours
+shopping
+Sir Walter Scott memorial
+military exhibition
+distillery
