@@ -18,7 +18,8 @@ class SKGo {
 		SKGo(); //constructor
 		~SKGo();
 		void explore();
-		void bucketOption();
+		void enterBucketOption();
+		void editBucketOption();
 		void countryOption();
 		void languageOption();
 		void nearOption();

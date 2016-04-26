@@ -92,7 +92,10 @@ void SKGo::explore(){
 
                 switch(answer){
                         case 1:
-				bucketOption();
+				if (!hasList)
+					enterBucketOption();
+				else if (hasList)
+					editBucketOption();
 				break;
 			case 2:
 				countryOption();
@@ -117,78 +120,104 @@ void SKGo::explore(){
 	}
 }
 
-void SKGo::bucketOption(){
+void SKGo::enterBucketOption(){
 	int choice=0;
 	string file, item;
 	ifstream bucketList;
 	int max=0, maxMatch;
 	vector<int> cityMatch(Cities.size(),0);
 
-        if (hasList==false){
-        	cout << "Do you want to enter in your bucket list (1) manually or (2) from a text file? ";
-                cin >> choice;
-                if (choice==1){
-                	cout << "What do you want to have in your bucket list?" << endl;
-                        cout << "Please enter 'end' when you are finished." << endl;
-                        getline(cin, item);
-                        while (item.compare("end") != 0){
-                        	bucket.addItem(item);
-                                getline(cin, item);
+        cout << "Do you want to enter in your bucket list (1) manually or (2) from a text file? ";
+        cin >> choice;
+        if (choice==1){
+               	cout << "What do you want to have in your bucket list?" << endl;
+                cout << "Please enter 'end' when you are finished." << endl;
+		cin.ignore();
+                getline(cin, item);
+                while (item.compare("end") != 0){
+                       	bucket.addItem(item);
+                         getline(cin, item);
+                }
+                hasList=true;
+        }
+	else if (choice==2){
+               	cin >> file;
+                bucketList.open(file.c_str());
+                while(! bucketList.eof()){
+                       	getline(bucketList, item);
+                        for (int i=0;i<item.size();i++)
+      	                 	item[i]=tolower(item[i]);
+       		                bucket.addItem(item);
                         }
                         hasList=true;
-                }
-                else if (choice==2){
-                	cin >> file;
-                        bucketList.open(file.c_str());
-                        while(! bucketList.eof()){
-                        	getline(bucketList, item);
-                                for (int i=0;i<item.size();i++)
-                                	item[i]=tolower(item[i]);
-                                        bucket.addItem(item);
-                                }
-                                hasList=true;
-                        }
-                else{
-                	cout << "Your choice was invalid. Please try again." << endl;
-                        return;
-                }
-	}
-        else if (hasList==true){
-        	cout << "Do you want to (1)view your bucket list, (2)add items to your bucket list, (3)remove items from your bucket list, or (4)clear your bucket list?" << endl;
-                cin >> choice;
-                if (choice==1){
-                	bucket.print();
-                        return;
-                }
-                else if (choice==2){
-                	cout << "What would you like to add to your bucket list?" << endl;
-                        cout << "Please enter 'end' when you are finished." << endl;
-                        getline(cin, item);
-			while (item.compare("end") != 0){
-				bucket.addItem(item);
-                                getline(cin, item);
-                        }
 		}
-                else if (choice==3){
-                        cout << "What items would you like to remove from your bucket list?" << endl;
-                        cout << "Please enter 'end' when you are finished." << endl;
+	else{
+               	cout << "Your choice was invalid. Please try again." << endl;
+                return;
+        }
+
+	for (int i=0;i<Cities.size();i++)
+                cityMatch[i] = Cities[i]->bucketMatch(bucket.getList());
+
+        for (int i=0;i<Cities.size();i++){
+                if (cityMatch[i]>max){
+                        max=cityMatch[i];
+                        maxMatch=i;
+                }
+        }
+
+        if (max>0){
+                cout << endl << endl << "Your bucket list matches with: " << endl;
+                Cities[maxMatch]->displayInfo();
+        }
+        else if (max==0){
+                cout << "We could not find a city to match your bucket list. Please try again!" << endl;
+        }
+}
+
+void SKGo::editBucketOption(){
+	int choice=0;
+        string item;
+        ifstream bucketList;
+        int max=0, maxMatch;
+        vector<int> cityMatch(Cities.size(),0);
+
+        cout << "Do you want to (1)view your bucket list, (2)add items to your bucket list, (3)remove items from your bucket list, or (4)clear your bucket list?" << endl;
+        cin >> choice;
+        if (choice==1){
+              	bucket.print();
+                return;
+        }
+        else if (choice==2){
+               	cout << "What would you like to add to your bucket list?" << endl;
+                cout << "Please enter 'end' when you are finished." << endl;
+		cin.ignore();
+                getline(cin, item);
+		while (item.compare("end") != 0){
+			bucket.addItem(item);
                         getline(cin, item);
-                        while (item.compare("end") != 0){
-                        	bucket.removeItem(item);
-                                getline(cin, item);
-                        }
-                }
-                else if (choice==4){
-                	bucket.clear();
-                        cout << "Your bucket list has been erased." << endl;
-                        hasList=false;
-                        return;
-                }
-                else{
-                	cout << "Your choice was invalid.  Please try again." << endl;
-                        return;
                 }
 	}
+        else if (choice==3){
+        	cout << "What items would you like to remove from your bucket list?" << endl;
+                cout << "Please enter 'end' when you are finished." << endl;
+		cin.ignore();
+                getline(cin, item);
+                while (item.compare("end") != 0){
+                      	bucket.removeItem(item);
+                        getline(cin, item);
+                }
+	}
+        else if (choice==4){
+              	bucket.clear();
+                cout << "Your bucket list has been erased." << endl;
+                hasList=false;
+                return;
+        }
+        else{
+               	cout << "Your choice was invalid.  Please try again." << endl;
+                return;
+        }
 
         for (int i=0;i<Cities.size();i++)
         	cityMatch[i] = Cities[i]->bucketMatch(bucket.getList());
