@@ -14,6 +14,7 @@
 #include <time.h>
 #include <stdlib.h>
 #include <iomanip>
+#include <limits>
 using namespace std;
 
 SKGo::SKGo(){
@@ -64,6 +65,7 @@ void SKGo::explore(){
                 answer=0;
 		//prompt for option
                 while (answer==0){
+			system("clear");
 			cout << "\033[1;35m       Welcome to our travel app\033[0m\n";
 			string line;
  			ifstream myfile ("SKGOBanner.txt");
@@ -96,21 +98,39 @@ void SKGo::explore(){
 					enterBucketOption();
 				else if (hasList)
 					editBucketOption();
+				cout << "Press Enter to return to main menu." << endl;
+                                cin.ignore();
+                                while(cin.get() != '\n'){}
 				break;
 			case 2:
 				countryOption();
+				cout << "Press Enter to return to main menu." << endl;
+				cin.ignore();
+				while(cin.get() != '\n'){}
 				break;
 			case 3:
 				nearOption();
+                                cout << "Press Enter to return to main menu." << endl;
+                                cin.ignore();
+                                while(cin.get() != '\n'){}
 				break;
 			case 4:
 				rankOption();
+				cout << "Press Enter to return to main menu." << endl;
+                                cin.ignore();
+                                while(cin.get() != '\n'){}
 				break;
 			case 5:
 				languageOption();
+				cout << "Press Enter to return to main menu." << endl;
+                                cin.ignore();
+                                while(cin.get() != '\n'){}
 				break;
 			case 6:
 				randOption();
+				cout << "Press Enter to return to main menu." << endl;
+                                cin.ignore();
+                                while(cin.get() != '\n'){}
 				break;
 			case 7:
 				cout << "Have a great trip!" << endl;
