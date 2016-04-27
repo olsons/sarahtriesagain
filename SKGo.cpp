@@ -99,7 +99,6 @@ void SKGo::explore(){
 				else if (hasList)
 					editBucketOption();
 				cout << "Press Enter to return to main menu." << endl;
-                                cin.ignore();
                                 while(cin.get() != '\n'){}
 				break;
 			case 2:
@@ -111,25 +110,25 @@ void SKGo::explore(){
 			case 3:
 				nearOption();
                                 cout << "Press Enter to return to main menu." << endl;
-                                cin.ignore();
+				cin.ignore();
                                 while(cin.get() != '\n'){}
 				break;
 			case 4:
 				rankOption();
 				cout << "Press Enter to return to main menu." << endl;
-                                cin.ignore();
+				cin.ignore();
                                 while(cin.get() != '\n'){}
 				break;
 			case 5:
 				languageOption();
 				cout << "Press Enter to return to main menu." << endl;
-                                cin.ignore();
+				cin.ignore();
                                 while(cin.get() != '\n'){}
 				break;
 			case 6:
 				randOption();
 				cout << "Press Enter to return to main menu." << endl;
-                                cin.ignore();
+				cin.ignore();
                                 while(cin.get() != '\n'){}
 				break;
 			case 7:
