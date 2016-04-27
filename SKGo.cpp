@@ -146,6 +146,7 @@ void SKGo::explore(){
 				break;
 			case 7:
 				cout << "Have a great trip!" << endl;
+				openPlaneGraphic();
                                 return;
                                 break;
 		}
@@ -387,4 +388,15 @@ void SKGo::randOption(){
 	srand ( time(NULL) ); //initialize the random seed
 	RandIndex = rand() % Cities.size(); //generates a random number between 0 and 30
 	Cities[RandIndex]->displayInfo(); //pick a random city and display that shit
+}
+
+void SKGo::openPlaneGraphic(){
+	string line;
+ 	ifstream myfile ("plane.txt");
+  	if (myfile.is_open()){
+		while ( getline (myfile,line) ){
+			cout << "\033[1;36m" << line << "\033[0m\n";
+		}
+    		myfile.close();
+  	}
 }

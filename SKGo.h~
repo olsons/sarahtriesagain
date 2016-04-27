@@ -25,7 +25,6 @@ class SKGo {
 		void nearOption();
 		void rankOption();
 		void randOption();
-		void openPlaneGraphic();
 
 	private:
 		BucketList bucket;

@@ -43,16 +43,16 @@ double cityClass::matchRanks(double *userRanks){
 
 //display info about the city
 void cityClass::displayInfo(){
-	cout << cityname << ", " << country << endl;
-	cout << "Language: " << language << endl;
-	cout << "Population: " << fixed << population << endl;
-	cout << "Rankings (1-10): " << endl;
+	cout << "\033[1;36m" << cityname << ", " << country  << " \033[0m" << endl;
+	cout << "\033[1;35mLanguage: \033[0m " << language << endl;
+	cout << "\033[1;35mPopulation: \033[0m " << fixed << population << endl;
+	cout << "\033[1;35mRankings (1-10): \033[0m " << endl;
 	cout << "	Cost: " << costRanking << endl;
 	cout << "	Adventurous: " << adventureRanking << endl;
 	cout << "	Cultural: " << culturalRanking << endl;
 	cout << "	Educational: " << educationalRanking << endl;
 	cout << "	Beauty: " << scenicRanking << endl;
-	cout << "Things to do: " << endl;
+	cout << "\033[1;35mThings to do: \033[0m  " << endl;
 	Activity::printActivities();
 }
 
