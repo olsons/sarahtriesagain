@@ -51,6 +51,19 @@ SKGo::SKGo(){
 	Cities.push_back(new cityClass("Moscow", "Russia", "Russian", 11920000, 3, 4, 8, 8, 7, 55.7558, 37.6173));
 	Cities.push_back(new cityClass("Reykjavik", "Iceland", "Icelandic", 119289, 4, 10, 5, 4, 9, 64.1265, 21.8174));
 	Cities.push_back(new cityClass("Sarajevo", "Bosnia and Herzegovina", "Bosnian", 527049, 8, 8, 5, 6, 7, 43.8564, 18.4131));
+	Cities.push_back(new cityClass("Lyon", "France", "French", 484344, 4, 4, 8, 6, 7, 45.7640, 4.8357));
+	Cities.push_back(new cityClass("Helsinki", "Finland", "Finnish", 599676, 3, 4, 8, 6, 5, 60.1699, 24.9384));
+	Cities.push_back(new cityClass("Gothenburg", "Sweden", "Swedish", 491630, 7, 6, 6, 4, 6, 57.7089, 11.9746));
+	Cities.push_back(new cityClass("Porto", "Portugal", "Portuguese", 230298, 6, 6, 6, 4, 8, 57.7089, 11.9746));
+	Cities.push_back(new cityClass("Granada", "Spain", "Spanish", 237540, 6, 5, 7, 5, 8, 57.7089, 11.9746));
+	Cities.push_back(new cityClass("Maastricht", "Netherlands", "Dutch", 119664, 4, 4, 6, 7, 8, 50.8514, 5.6910));
+	Cities.push_back(new cityClass("Bucharest", "Romania", "Romanian", 1913000, 5, 6, 7, 6, 7, 44.4268, 26.1025));
+	Cities.push_back(new cityClass("Innsbruck", "Austria", "German", 122458, 3, 9, 6, 6, 9, 47.2692, 11.4041));
+	Cities.push_back(new cityClass("Genoa", "Italy", "Italian", 583482, 5, 6, 6, 4, 9, 44.4056, 8.9463));
+	Cities.push_back(new cityClass("Bratislava", "Slovakia", "German", 414391, 8, 5, 8, 7, 8, 48.1486, 17.1077));
+	Cities.push_back(new cityClass("Ljubljana", "Slovenia", "Slovenian", 272140, 7, 6, 6, 6, 8, 46.0569, 14.5058));
+	Cities.push_back(new cityClass("Split", "Croatia", "Croatian", 178102, 5, 9, 7, 7, 9, 43.5081, 16.4402));
+	Cities.push_back(new cityClass("Bergen", "Norway", "Norwegian", 265857, 3, 6, 6, 6, 8, 60.3913, 5.3221));
 }
 
 SKGo::~SKGo(){
@@ -99,7 +112,6 @@ void SKGo::explore(){
 				else if (hasList)
 					editBucketOption();
 				cout << "Press Enter to return to main menu." << endl;
-                                cin.ignore();
                                 while(cin.get() != '\n'){}
 				break;
 			case 2:
@@ -111,25 +123,25 @@ void SKGo::explore(){
 			case 3:
 				nearOption();
                                 cout << "Press Enter to return to main menu." << endl;
-                                cin.ignore();
+				cin.ignore();
                                 while(cin.get() != '\n'){}
 				break;
 			case 4:
 				rankOption();
 				cout << "Press Enter to return to main menu." << endl;
-                                cin.ignore();
+				cin.ignore();
                                 while(cin.get() != '\n'){}
 				break;
 			case 5:
 				languageOption();
 				cout << "Press Enter to return to main menu." << endl;
-                                cin.ignore();
+				cin.ignore();
                                 while(cin.get() != '\n'){}
 				break;
 			case 6:
 				randOption();
 				cout << "Press Enter to return to main menu." << endl;
-                                cin.ignore();
+				cin.ignore();
                                 while(cin.get() != '\n'){}
 				break;
 			case 7:
