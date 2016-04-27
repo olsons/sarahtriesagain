@@ -19,7 +19,7 @@ class cityClass : public Activity{
 
 	public:
 		cityClass(string, string, string, unsigned int, int, int, int, int, int, double, double); //constructor
-		double matchRanks(double *); //use a chi-square like test to determine how similar the rankings gathered from the wish list are to the city
+		double matchRanks(int *); //use a chi-square like test to determine how similar the rankings gathered from the wish list are to the city
 	       	string findLodging(); //see if an airbnb or a hostel is a better option
 		void displayInfo(); //display general information
 		double findNearby(cityClass); //find nearby cities

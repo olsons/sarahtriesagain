@@ -31,7 +31,7 @@ cityClass::cityClass(string city, string c, string l, unsigned int p, int costR,
 	longitude=lo;
 }
 
-double cityClass::matchRanks(double *userRanks){
+double cityClass::matchRanks(int *userRanks){
 	double cityRanks[] = {costRanking, adventureRanking, culturalRanking, educationalRanking, scenicRanking};
 	double chiSum = 0;
 
