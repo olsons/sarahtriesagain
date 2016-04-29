@@ -349,8 +349,8 @@ void SKGo::nearOption(){
 }
 
 void SKGo::rankOption(){
-	double userRanks[]={0};
-	double minChi=1000;
+	double userRanks[5];
+	double minChi=0;
 	int match=-1;
 
 	//Chi squared (to match the actual versus wanted)
